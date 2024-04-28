@@ -1,22 +1,10 @@
-var salaries_class = 
-    "text-truncate badgy salary lg:tw-btn" +
-    + "tw-text-ink lg:tw-btn-secondary-outline"
-    + "tw-text-xs lg:tw-py-0.5 lg:tw-px-2 ng-star-inserted";
-
 var adjusted_salaries_class_name = ".text-truncate.badgy.salary.lg\\:tw-btn.tw-text-ink.lg\\:tw-btn-secondary-outline.tw-text-xs.lg\\:tw-py-0\\.5.lg\\:tw-px-2.ng-star-inserted";
-
-
-var arry = new Array();
 
 var salaries_items = Array.from(
     document.querySelectorAll(adjusted_salaries_class_name)
 );
 
 for (const element of salaries_items) {
-    //console.log("Salary start " + element[0], " ", "Salary end " + element[1]);
-    // for (const element_items of Array.from(salaries_items)) {
-    //     arry.push(element_items);
-    // }
 
     let temp = element.textContent;
     temp = temp.replace(/\s+/g, '');
