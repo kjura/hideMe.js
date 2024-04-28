@@ -25,7 +25,7 @@ function hide_me() {
                     temp.split('-')
                     );
 
-                if (starting_range > 20000 || starting_range === "Check Salary Match") {
+                if (starting_range > 20000 || starting_range < 10000 || starting_range === "Check Salary Match" ) {
                         item.style.display = "none";
                     }
                 }
