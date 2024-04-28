@@ -1,5 +1,4 @@
-void function hide_me() {
-    const adjusted_salaries_class_name = 
+const adjusted_salaries_class_name = 
     ".text-truncate.badgy.salary.lg"
     + "\\:tw-btn.tw-text-ink.lg"
     + "\\:tw-btn-secondary-outline.tw-text-xs.lg"
@@ -7,22 +6,27 @@ void function hide_me() {
     + "\\.5.lg"
     + "\\:tw-px-2.ng-star-inserted";
 
-    const salaries_items = Array.from(
-        document.querySelectorAll(adjusted_salaries_class_name)
-    );
+const webpage_ad_class_node_list = document.querySelectorAll(".list-container.ng-star-inserted");
 
-    for (const element of salaries_items) {
+for (const list_container of webpage_ad_class_node_list) {
 
-        let temp = element.textContent;
-        temp = temp.replace(/\s+/g, '');
-        let starting_range = parseInt(
-            temp.split('-')
-            );
-    
-        if (starting_range > 20000) {
-            element.style.visibility = "hidden";
-        }
-        
-    }
+    const listItems = list_container.children;
+    const listArry = Array.from(listItems);
+
+    listArry.forEach(
+        (item) => {
+             const buka = item.querySelector(adjusted_salaries_class_name);
+
+             let temp = buka.textContent;
+             temp = temp.replace(/\s+/g, '');
+             let starting_range = parseInt(
+                temp.split('-')
+                );
+
+            if (starting_range > 20000 || starting_range === "Check Salary Match") {
+                    item.style.display = "none";
+                }
+            }
+        );
 
 }
